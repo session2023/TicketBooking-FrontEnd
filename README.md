@@ -1,0 +1,1 @@
+This is a Ticket Booking Frontend Application built using Java and JSP (JavaServer Pages), with the frontend interacting with a backend API using RestTemplate for HTTP requests. The app allows users to view, select, and book tickets for various events such as movies, concerts, or flights.
