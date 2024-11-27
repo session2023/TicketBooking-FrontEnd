@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            color: #555;
+        }
+        th {
+            background-color: #f7f7f7;
+            text-align: left;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+            border-radius: 8px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+        .footer a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Find the Detailed Ticket Below</h1>
+        <img src="https://via.placeholder.com/600x200?text=Ticket+Header+Image" alt="Ticket Header">
+        <table>
+            <tr>
+                <th>Ticket Number:</th>
+                <td><p th:text="${ticket.ticketNumber}"></p></td>
+            </tr>
+            <tr>
+                <th>Passenger Name:</th>
+                <td><p th:text="${ticket.name}"></p></td>
+            </tr>
+            <tr>
+                <th>Departure:</th>
+                <td><p th:text="${ticket.departure}"></p></td>
+            </tr>
+            <tr>
+                <th>Arrival At:</th>
+                <td><p th:text="${ticket.arrival}"></p></td>
+            </tr>
+            <tr>
+                <th>Date Of Journey:</th>
+                <td><p th:text="${ticket.dateOfJourney}"></p></td>
+            </tr>
+            <tr>
+                <th>Ticket Status:</th>
+                <td><p th:text="${ticket.status}"></p></td>
+            </tr>
+        </table>
+        <div class="footer">
+            <p>&copy; 2024 Ticketing System | <a href="#">Help</a> | <a href="#">Contact Us</a></p>
+        </div>
+    </div>
+</body>
+</html>

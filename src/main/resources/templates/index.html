@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Booking App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            margin: 0;
+            padding: 20px;
+            color: #fff;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+        }
+        td {
+            padding: 15px;
+            color: #555;
+        }
+        input[type="text"], input[type="date"] {
+            width: calc(100% - 20px);
+            padding: 12px;
+            border: 2px solid #007bff;
+            border-radius: 4px;
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus, input[type="date"]:focus {
+            border-color: #0056b3;
+            outline: none;
+        }
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .form-header {
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.5em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Book Your Ticket</h1>
+        <form th:action="@{/book-ticket}" th:object="${passenger}" method="post">
+            <div class="form-header">Please fill out the form below</div>
+            <table>
+                <tr>
+                    <td>Passenger ID:</td>
+                    <td><input type="text" th:field="*{pid}" required /></td>
+                </tr>
+                <tr>
+                    <td>Passenger Name:</td>
+                    <td><input type="text" th:field="*{name}" required /></td>
+                </tr>
+                <tr>
+                    <td>Departure:</td>
+                    <td><input type="text" th:field="*{departure}" required /></td>
+                </tr>
+                <tr>
+                    <td>Arrival:</td>
+                    <td><input type="text" th:field="*{arrival}" required /></td>
+                </tr>
+                <tr>
+                    <td>Date of Journey:</td>
+                    <td><input type="date" th:field="*{dateOfJourney}" required /></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Book Ticket" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <a href="/ticket">Get Full Ticket</a>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Ticketing System | <a href="#">Help</a> | <a href="#">Contact Us</a></p>
+    </div>
+</body>
+</html>
